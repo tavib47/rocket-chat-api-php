@@ -162,8 +162,8 @@ trait Data
    */
   public function updateOutOfResponse($response)
   {
-    if (isset($response->_id)) {
-      $this->setRoomId($response->_id);
+    if (isset($response->rid)) {
+      $this->setRoomId($response->rid);
     }
 
     if (isset($response->_updatedAt)) {
