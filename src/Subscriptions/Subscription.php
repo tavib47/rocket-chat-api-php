@@ -72,4 +72,18 @@ class Subscription extends Request
 
       return true;
     }
+
+    public function unRead() {
+      static::send(
+        "subscriptions.unread",
+        "GET",
+        ["roomId" => $this->getRoomId()]
+      );
+
+      if (!static::getSuccess()) {
+        return false;
+      }
+
+      return true;
+    }
 }
