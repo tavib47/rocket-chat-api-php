@@ -62,7 +62,7 @@ class Subscription extends Request
     public function read() {
       static::send(
         "subscriptions.read",
-        "GET",
+        "POST",
         ["roomId" => $this->getRoomId()]
       );
 
@@ -76,7 +76,7 @@ class Subscription extends Request
     public function unRead() {
       static::send(
         "subscriptions.unread",
-        "GET",
+        "POST",
         ["roomId" => $this->getRoomId()]
       );
 
