@@ -58,4 +58,18 @@ class Subscription extends Request
 
       return $this->updateOutOfResponse(static::getResponse());
     }
+
+    public function read() {
+      static::send(
+        "subscriptions.read",
+        "GET",
+        ["roomId" => $this->getRoomId()]
+      );
+
+      if (!static::getSuccess()) {
+        return false;
+      }
+
+      return true;
+    }
 }
