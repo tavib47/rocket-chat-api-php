@@ -278,7 +278,7 @@ abstract class Request implements \JsonSerializable
      *
      * @return array Data to serialize
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return null;
     }
